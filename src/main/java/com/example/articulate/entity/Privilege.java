@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Data
 public class Privilege extends BaseEntity {
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private PrivilegeEnum name;
     @OneToMany(mappedBy = "privilege")
