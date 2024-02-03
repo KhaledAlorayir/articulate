@@ -14,6 +14,7 @@ public class Privilege extends BaseEntity {
     @Column(nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private PrivilegeEnum name;
+
     @OneToMany(mappedBy = "privilege")
     private List<PlatformUser> users;
 }

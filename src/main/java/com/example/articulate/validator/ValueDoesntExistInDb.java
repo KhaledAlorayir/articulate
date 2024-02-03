@@ -32,7 +32,7 @@ public @interface ValueDoesntExistInDb {
 
     @RequiredArgsConstructor
     class ValueDoesntExistInDbValidator implements ConstraintValidator<ValueDoesntExistInDb, String> {
-        public static final String NATIVE_QUERY = "SELECT COUNT(*) FROM %s WHERE %s = ?";
+        public static final String NATIVE_QUERY = "SELECT COUNT(*) FROM %s WHERE upper(%s) = upper(?)";
         private final JdbcTemplate jdbcTemplate;
         private String tableName, fieldName;
 

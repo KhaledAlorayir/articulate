@@ -8,6 +8,7 @@ public interface Constants {
     interface Default {
         int MAX_USERNAME_LENGTH = 25;
         int DB_MAX_LENGTH = 255;
+        int PASSWORD_MIN_LENGTH = 4;
     }
 
     interface Regex {
@@ -20,7 +21,7 @@ public interface Constants {
         String PHONE_NUMBER_USED = "the phone number is already used";
         String PHONE_NUMBER_INVALID = "phone number must be entered correctly, (5XXXXXXXX)";
         String GENERIC_SERVER_ERROR = "an unexpected error occurred";
-
+        String PASSWORD_MIN_LENGTH_MESSAGE = "password must be at least 4 characters";
     }
 
     interface CacheKeys {

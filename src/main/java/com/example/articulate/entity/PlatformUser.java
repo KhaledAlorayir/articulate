@@ -12,9 +12,14 @@ import lombok.*;
 @NoArgsConstructor
 public class PlatformUser extends BaseEntity {
     @Column(nullable = false, unique = true)
-    private String username, email, password;
+    private String username, email;
+
     @Column(nullable = false, unique = true, length = 15)
     private String mobileNumber;
+
+    @Column(nullable = false)
+    private String password;
+
     @ManyToOne
     @JoinColumn(name = "privilege_id")
     private Privilege privilege;
