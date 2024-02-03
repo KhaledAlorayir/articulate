@@ -10,6 +10,7 @@ public interface Constants {
         int MAX_USERNAME_LENGTH = 25;
         int DB_MAX_LENGTH = 255;
         int PASSWORD_MIN_LENGTH = 4;
+        int ARTICLE_BODY_MAX_LENGTH = 500;
     }
 
     interface Regex {

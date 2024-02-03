@@ -1,10 +1,9 @@
 package com.example.articulate.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -20,9 +19,12 @@ public class PlatformUser extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "privilege_id")
     private Privilege privilege;
+
+    @OneToMany(mappedBy = "author")
+    List<Article> articles;
 
     public PlatformUser(String username, String email, String password, String mobileNumber, Privilege privilege) {
         this.username = username;
