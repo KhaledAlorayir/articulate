@@ -3,6 +3,7 @@ package com.example.articulate.constant;
 public interface Constants {
     interface API {
         String API_PREFIX = "/api";
+        String JWT_PRIVILEGE_CLAIM_KEY="ROLE";
     }
 
     interface Default {
@@ -26,5 +27,10 @@ public interface Constants {
 
     interface CacheKeys {
         String PRIVILEGE_CACHE_KEY="PRIVILEGE_CACHE_KEY";
+    }
+
+    interface ROLE {
+        String USER_ROLE = "ROLE_USER";
+        String ADMIN_ROLE = "ROLE_ADMIN";
     }
 }
